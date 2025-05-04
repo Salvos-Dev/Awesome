@@ -1,0 +1,1 @@
+os.execute('picom -b')
