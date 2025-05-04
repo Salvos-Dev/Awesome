@@ -1,5 +1,5 @@
 ---------------------------
--- %s awesome theme --
+-- Gruvbox Dark --
 ---------------------------
 
 local theme_assets = require("beautiful.theme_assets")
@@ -94,8 +94,6 @@ theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 theme.icon_theme = nil
-
-theme.warn_about_missing_glyphs = false
 
 return theme
 
