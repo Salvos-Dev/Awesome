@@ -22,3 +22,4 @@ require('lspconfig').lua_ls.setup {
 require('lspconfig').cssls.setup{}
 require('lspconfig').html.setup{}
 require('lspconfig').pyright.setup{}
+require('lspconfig').clangd.setup{}

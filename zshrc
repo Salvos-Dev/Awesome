@@ -26,5 +26,6 @@ export SUDO_EDITOR='nvim'
 
 # Prompt
 PS1='[%n@%m %1~]$ '
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 pfetch

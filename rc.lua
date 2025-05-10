@@ -5,6 +5,8 @@ pcall(require, "luarocks.loader")
 require("ui.picom")
 require("opts.display")
 
+local script_dir = "~/.config/awesome/ui"
+
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -331,9 +333,21 @@ globalkeys = gears.table.join(
         end
     end, { description = "restore minimized", group = "client" }),
 
-    -- Prompt
+    -- Rofi menus
     awful.key({ modkey }, "r", function()
         awful.spawn("rofi -show drun")
+    end, { description = "run prompt", group = "launcher" }),
+
+    awful.key({ modkey }, "p", function()
+        awful.spawn.with_shell("~/.config/awesome/ui/power.sh")
+    end, { description = "run prompt", group = "launcher" }),
+
+    awful.key({ modkey, "Shift" }, "p", function()
+        awful.spawn.with_shell("~/.config/awesome/ui/power-save.sh")
+    end, { description = "run prompt", group = "launcher" }),
+
+    awful.key({ modkey, "Shift" }, "s", function()
+        awful.spawn.with_shell("~/.config/awesome/ui/screenshot.sh")
     end, { description = "run prompt", group = "launcher" }),
 
     awful.key({ modkey }, "x", function()
@@ -343,11 +357,7 @@ globalkeys = gears.table.join(
             exe_callback = awful.util.eval,
             history_path = awful.util.get_cache_dir() .. "/history_eval",
         })
-    end, { description = "lua execute prompt", group = "awesome" }),
-    -- Menubar
-    awful.key({ modkey }, "p", function()
-        menubar.show()
-    end, { description = "show the menubar", group = "launcher" })
+    end, { description = "lua execute prompt", group = "awesome" })
 )
 
 clientkeys = gears.table.join(
